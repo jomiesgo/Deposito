@@ -13,19 +13,19 @@ public class CCuenta {
     {
         data.setNombre(nom);
         data.setCuenta(cue);
-        data.setSaldo(sal);
+        data.saldo=sal;
     }
 
     public double estado()
     {
-        return data.getSaldo();
+        return data.saldo;
     }
 
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
             throw new Exception("No se puede ingresar una cantidad negativa");
-        data.setSaldo(data.getSaldo() + cantidad);
+        data.saldo = data.saldo + cantidad;
     }
 
     public void retirar(double cantidad) throws Exception
@@ -34,7 +34,6 @@ public class CCuenta {
             throw new Exception ("No se puede retirar una cantidad negativa");
         if (estado()< cantidad)
             throw new Exception ("No se hay suficiente saldo");
-        data.setSaldo(data.getSaldo() - cantidad);
+        data.saldo = data.saldo - cantidad;
     }
 }
-/**ahora agrego un commit*/
